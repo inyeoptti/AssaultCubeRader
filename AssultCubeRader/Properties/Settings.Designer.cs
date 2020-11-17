@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AssultCubeRader.Properties
+namespace AssaultCubeRader.Properties
 {
 
 

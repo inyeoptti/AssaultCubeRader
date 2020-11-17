@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace AssultCubeRader
+namespace AssaultCubeRader
 {
 	partial class Form1
 	{

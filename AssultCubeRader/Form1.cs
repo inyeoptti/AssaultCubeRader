@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
 
-namespace AssultCubeRader
+namespace AssaultCubeRader
 {
 	public partial class Form1 : MaterialForm
 	{

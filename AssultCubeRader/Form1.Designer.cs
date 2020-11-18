@@ -34,6 +34,7 @@ namespace AssaultCubeRader
 			this.statusLabel = new MaterialSkin.Controls.MaterialLabel();
 			this.statusCheckTimer = new System.Windows.Forms.Timer(this.components);
 			this.checkBoxInfAmmo = new MaterialSkin.Controls.MaterialCheckBox();
+			this.checkBoxInfHealth = new MaterialSkin.Controls.MaterialCheckBox();
 			this.SuspendLayout();
 			// 
 			// statusLabel
@@ -74,11 +75,29 @@ namespace AssaultCubeRader
 			this.checkBoxInfAmmo.UseVisualStyleBackColor = true;
 			this.checkBoxInfAmmo.CheckedChanged += new System.EventHandler(this.checkBoxInfAmmo_CheckedChanged);
 			// 
+			// checkBoxInfHealth
+			// 
+			this.checkBoxInfHealth.AutoSize = true;
+			this.checkBoxInfHealth.Depth = 0;
+			this.checkBoxInfHealth.Font = new System.Drawing.Font("Roboto", 10F);
+			this.checkBoxInfHealth.Location = new System.Drawing.Point(6, 114);
+			this.checkBoxInfHealth.Margin = new System.Windows.Forms.Padding(0);
+			this.checkBoxInfHealth.MouseLocation = new System.Drawing.Point(-1, -1);
+			this.checkBoxInfHealth.MouseState = MaterialSkin.MouseState.HOVER;
+			this.checkBoxInfHealth.Name = "checkBoxInfHealth";
+			this.checkBoxInfHealth.Ripple = true;
+			this.checkBoxInfHealth.Size = new System.Drawing.Size(116, 30);
+			this.checkBoxInfHealth.TabIndex = 4;
+			this.checkBoxInfHealth.Text = "Infinity Health";
+			this.checkBoxInfHealth.UseVisualStyleBackColor = true;
+			this.checkBoxInfHealth.CheckedChanged += new System.EventHandler(this.checkBoxInfHealth_CheckedChanged);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(408, 293);
+			this.Controls.Add(this.checkBoxInfHealth);
 			this.Controls.Add(this.checkBoxInfAmmo);
 			this.Controls.Add(this.statusLabel);
 			this.Name = "Form1";
@@ -97,6 +116,7 @@ namespace AssaultCubeRader
 		private MaterialSkin.Controls.MaterialLabel statusLabel;
 		private System.Windows.Forms.Timer statusCheckTimer;
 		private MaterialSkin.Controls.MaterialCheckBox checkBoxInfAmmo;
+		private MaterialSkin.Controls.MaterialCheckBox checkBoxInfHealth;
 	}
 }
 

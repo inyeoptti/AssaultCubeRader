@@ -107,5 +107,20 @@ namespace AssaultCubeRader
 				}
 			}
 		}
+
+		private void checkBoxInfHealth_CheckedChanged(object sender, EventArgs e)
+		{
+			if (acProcess != null && !acProcess.HasExited && acProcess.Id == hackCore.PID)
+			{
+				if (((MaterialCheckBox)sender).Checked)
+				{
+					hackCore.EnableInfHealth();
+				}
+				else
+				{
+					hackCore.DisableInfHealth();
+				}
+			}
+		}
 	}
 }

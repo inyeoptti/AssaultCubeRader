@@ -35,6 +35,7 @@ namespace AssaultCubeRader
 			this.statusCheckTimer = new System.Windows.Forms.Timer(this.components);
 			this.checkBoxInfAmmo = new MaterialSkin.Controls.MaterialCheckBox();
 			this.checkBoxInfHealth = new MaterialSkin.Controls.MaterialCheckBox();
+			this.checkBoxInfArmor = new MaterialSkin.Controls.MaterialCheckBox();
 			this.SuspendLayout();
 			// 
 			// statusLabel
@@ -92,11 +93,29 @@ namespace AssaultCubeRader
 			this.checkBoxInfHealth.UseVisualStyleBackColor = true;
 			this.checkBoxInfHealth.CheckedChanged += new System.EventHandler(this.checkBoxInfHealth_CheckedChanged);
 			// 
+			// checkBoxInfArmor
+			// 
+			this.checkBoxInfArmor.AutoSize = true;
+			this.checkBoxInfArmor.Depth = 0;
+			this.checkBoxInfArmor.Font = new System.Drawing.Font("Roboto", 10F);
+			this.checkBoxInfArmor.Location = new System.Drawing.Point(7, 144);
+			this.checkBoxInfArmor.Margin = new System.Windows.Forms.Padding(0);
+			this.checkBoxInfArmor.MouseLocation = new System.Drawing.Point(-1, -1);
+			this.checkBoxInfArmor.MouseState = MaterialSkin.MouseState.HOVER;
+			this.checkBoxInfArmor.Name = "checkBoxInfArmor";
+			this.checkBoxInfArmor.Ripple = true;
+			this.checkBoxInfArmor.Size = new System.Drawing.Size(114, 30);
+			this.checkBoxInfArmor.TabIndex = 5;
+			this.checkBoxInfArmor.Text = "Infinity Armor";
+			this.checkBoxInfArmor.UseVisualStyleBackColor = true;
+			this.checkBoxInfArmor.CheckedChanged += new System.EventHandler(this.checkBoxInfArmor_CheckedChanged);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(408, 293);
+			this.Controls.Add(this.checkBoxInfArmor);
 			this.Controls.Add(this.checkBoxInfHealth);
 			this.Controls.Add(this.checkBoxInfAmmo);
 			this.Controls.Add(this.statusLabel);
@@ -117,6 +136,7 @@ namespace AssaultCubeRader
 		private System.Windows.Forms.Timer statusCheckTimer;
 		private MaterialSkin.Controls.MaterialCheckBox checkBoxInfAmmo;
 		private MaterialSkin.Controls.MaterialCheckBox checkBoxInfHealth;
+		private MaterialSkin.Controls.MaterialCheckBox checkBoxInfArmor;
 	}
 }
 

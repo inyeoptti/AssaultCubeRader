@@ -122,5 +122,20 @@ namespace AssaultCubeRader
 				}
 			}
 		}
+
+		private void checkBoxInfArmor_CheckedChanged(object sender, EventArgs e)
+		{
+			if (acProcess != null && !acProcess.HasExited && acProcess.Id == hackCore.PID)
+			{
+				if (((MaterialCheckBox)sender).Checked)
+				{
+					hackCore.EnableInfArmor();
+				}
+				else
+				{
+					hackCore.DisableInfArmor();
+				}
+			}
+		}
 	}
 }

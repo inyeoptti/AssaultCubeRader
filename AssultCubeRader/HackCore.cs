@@ -52,6 +52,7 @@ namespace AssaultCubeRader
 		public void DisableInfAmmo()
 		{
 			if (infAmmoTimer != null) infAmmoTimer.Dispose();
+			infAmmoTimer = null;
 		}
 		public unsafe void SetMaxAmmoAll(object stateInfo)
 		{
@@ -86,9 +87,38 @@ namespace AssaultCubeRader
 			}
 		}
 
-		public void DisableInfHealth()
+		private Timer infArmorTimer;
+		internal void EnableInfArmor()
 		{
-			infHpTimer.Dispose();
+			if(handle != (IntPtr)0)
+			{
+				if (infArmorTimer == null) infArmorTimer = new Timer(SetMaxArmor, null, 0, 100);
+			}
+		} 
+
+		internal void DisableInfArmor()
+		{
+			if(infArmorTimer != null) infArmorTimer.Dispose();
+			infArmorTimer = null;
+		}
+
+		private unsafe void SetMaxArmor(object state)
+		{
+			if (handle != (IntPtr)0)
+			{
+				IntPtr playerBasePtr = Marshal.AllocHGlobal(4);
+
+				int armorValue = 1000;
+				IntPtr pArmorValue = new IntPtr(&armorValue);
+
+				if (ReadProcessMemory(handle, PLAYERBASEPTR, playerBasePtr, 4, out _))
+				{
+					var playerBase = Marshal.ReadIntPtr(playerBasePtr);
+					Marshal.FreeHGlobal(playerBasePtr);
+
+					WriteProcessMemory(handle, playerBase + 0xFC, pArmorValue, 4, out _);
+				}
+			}
 		}
 
 		private Timer infHpTimer;
@@ -100,6 +130,12 @@ namespace AssaultCubeRader
 			}
 		}
 
+		public void DisableInfHealth()
+		{
+			
+			if(infHpTimer != null) infHpTimer.Dispose();
+			infHpTimer = null;
+		}
 
 		private unsafe void SetMaxHealth(object state)
 		{
